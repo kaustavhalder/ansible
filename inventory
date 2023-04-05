@@ -1,2 +1,5 @@
-[example]
-107.20.106.183
+[dev]
+198.58.109.91
+
+[dev:vars]
+ansible_user=root

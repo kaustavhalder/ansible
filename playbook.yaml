@@ -1,9 +1,5 @@
 ---
-- hosts: all
-  become: true
+- hosts: dbservers
   tasks:
-    - name: Install Apache 2
-      apt:
-        name: apache2
-        update_cache: true
-        state: latest
+    - name: install mysql-server
+      apt: name=mysql-server state=present update_cache=yes
