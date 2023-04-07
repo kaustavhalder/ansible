@@ -2,3 +2,5 @@
 
 This is just a placeholder repo for learning Ansible, following the tutorial
 of Jeff Geerling on YouTube
+
+- Docker : no ssh available

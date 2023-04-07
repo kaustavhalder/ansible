@@ -1,0 +1,8 @@
+version: '3'
+services:
+  target1:
+    image: mmumshad/ubuntu-ssh-enabled
+  # target2:
+  #   image: mmumshad/ubuntu-ssh-enabled
+  # target3:
+  #   image: mmumshad/ubuntu-ssh-enabled
