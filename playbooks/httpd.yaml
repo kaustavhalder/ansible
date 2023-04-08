@@ -15,6 +15,18 @@
           - httpd
           - httpd-devel
         state: present
+    - name: Copy Config files
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        owner: root
+        group: root
+        mode: 0644
+      with_items:
+        - src: httd.conf
+          dest: /tmp
+        - src: httd-vhosts.conf
+          dest: /tmp
     - name: Ensure Apache is up and running
       ansible.builtin.service:
         name: httpd
