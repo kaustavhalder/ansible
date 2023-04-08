@@ -1,0 +1,11 @@
+---
+- name: Install Apache
+  hosts: app
+  become: true
+  tasks:
+    - name: Install Apache
+      ansible.builtin.yum:
+        name:
+          - httpd
+          - httpd-devel
+        state: present
