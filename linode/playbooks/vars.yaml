@@ -1,0 +1,6 @@
+---
+download_dir: /tmp
+solr_dir: /appsrmis/dmz/Config
+solr_version: 1.2.44
+solr_checksum: SHA512:12344411232144455
+solr_url: http://mirror.berkley.com//solar-1.2.44.tgz

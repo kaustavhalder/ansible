@@ -22,7 +22,7 @@
         dest: "{{ item.dest }}"
         owner: root
         group: root
-        mode: 0644
+        mode: '0644'
       with_items:
         - src: httpd.conf
           dest: /tmp
