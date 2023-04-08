@@ -17,6 +17,12 @@
         state: restarted
 
   tasks:
+    - name: Update Env Vars.
+      ansible.builtin.lineinfile:
+        dest: "~/.bashrc"
+        regexp: "^ENV_VAR="
+        line: "ENV_VAR=value"
+      become: false
     - name: Ensure Apache is installed.
       ansible.builtin.yum:
         name:
@@ -26,6 +32,6 @@
       ansible.builtin.copy:
         src: files/test.conf
         dest: /etc/httpd/conf.d/test.conf
-        mode: '2770'
+        mode: "2770"
       notify:
         - Restart apache
