@@ -2,13 +2,14 @@
 - name: Install Apache
   hosts: app
   become: true
+  gather_facts: false
   tasks:
     - name: Update OS
       ansible.builtin.yum:
         name:
           - wget
           - bzip2
-        state: latest
+        state: present
     - name: Install Apache
       ansible.builtin.yum:
         name:
@@ -23,9 +24,9 @@
         group: root
         mode: 0644
       with_items:
-        - src: httd.conf
+        - src: httpd.conf
           dest: /tmp
-        - src: httd-vhosts.conf
+        - src: httpd-vhosts.conf
           dest: /tmp
     - name: Ensure Apache is up and running
       ansible.builtin.service:
