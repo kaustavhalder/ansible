@@ -1,9 +1,0 @@
----
-- hosts: ansible
-  become: true
-  tasks:
-    - name: Install Apache
-      apt:
-        name: apache2
-        update_cache: true
-        state: latest
