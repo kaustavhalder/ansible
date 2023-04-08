@@ -2,30 +2,31 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    # General configuration
-    config.vm.box = "generic/centos7"
-    config.ssh.insert_key = false
+  # General configuration
+  config.vm.box = "geerlingguy/centos7"
 
-    config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.ssh.insert_key = false
 
-    config.vm.provider :virtualbox do |v|
-        v.memory = 256
-        v.linked_clone = true
-    end
+  config.vm.synced_folder '.', '/vagrant', disabled: true
 
-    # VM configuration
-    config.vm.define "app1" do |app|
-        app.vm.hostname = "app1-appl.test"
-        app.vm.network :private_network,ip: "192.168.60.12"
-    end
+  config.vm.provider :virtualbox do |v|
+      v.memory = 256
+      v.linked_clone = true
+  end
 
-    # VM2 config
-    config.vm.define "app2" do |app|
-        app.vm.hostname = "app2-appl.test"
-        app.vm.network :private_network,ip: "192.168.60.13"
-    end
+  # VMC config
+  config.vm.define "app1" do |app|
+    app.vm.hostname = 'orc-app1.test.org'
+    app.vm.network :private_network, ip: "192.168.60.4"
+  end
 
-    # config.vm.provision "ansible" do |ansible|
-    #     ansible.playbook = "playbook.yml"
-    # end
+  config.vm.define "db" do |db|
+    db.vm.hostname = 'orc-db.test.org'
+    db.vm.network :private_network, ip: "192.168.60.5"
+  end
+  
+
+  # config.vm.provision "ansible" do |ansible|
+  #     ansible.playbook = "playbook.yml"
+  # end
 end

@@ -1,6 +1,9 @@
-# Ansbile for DevOPs
+# Ansible
 
-This is just a placeholder repo for learning Ansible, following the tutorial
-of Jeff Geerling on YouTube
+## Description
 
-- Docker : no ssh available
+This is just a standalone repo for learning Ansible using Jeff Geerlings live streams
+Below is the overview
+
+- Provision VMs using Vagrant and Virtual Box
+- Use playbooks to manage them
