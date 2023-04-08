@@ -23,11 +23,13 @@
         regexp: "^ENV_VAR="
         line: "ENV_VAR=value"
       become: false
+
     - name: Ensure Apache is installed.
       ansible.builtin.yum:
         name:
           - httpd
         state: present
+
     - name: Copy test config file.
       ansible.builtin.copy:
         src: files/test.conf
