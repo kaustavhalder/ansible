@@ -1,0 +1,31 @@
+---
+- name: Install Apache.
+  hosts: centos
+  become: true
+
+  handlers:
+    - name: Restart apache
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+      notify:
+        - Restart memcached
+
+    - name: Restart memcached
+      ansible.builtin.service:
+        name: memcached
+        state: restarted
+
+  tasks:
+    - name: Ensure Apache is installed.
+      ansible.builtin.yum:
+        name:
+          - httpd
+        state: present
+    - name: Copy test config file.
+      ansible.builtin.copy:
+        src: files/test.conf
+        dest: /etc/httpd/conf.d/test.conf
+        mode: '2770'
+      notify:
+        - Restart apache
