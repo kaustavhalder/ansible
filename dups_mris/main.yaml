@@ -25,3 +25,15 @@
       ansible.windows.win_service:
         name: Tomcat9.5
         state: started
+
+---
+- name: Deploy app config files
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Copy App config files
+      ansible.windows.win_copy:
+        src: local.war
+        dest: E:\apps\v1
+        remote_src: true
