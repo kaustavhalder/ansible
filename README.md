@@ -8,3 +8,4 @@ Below is the overview
 - Provision VMs using Vagrant and Virtual Box
 - Use playbooks to manage them
 - VMs are mostly Linux
+- Revisit handlers and vars and roles
