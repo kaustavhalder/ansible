@@ -1,0 +1,27 @@
+---
+- name: Deploy App on TomCat server
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Stop Tomcat service
+      ansible.windows.win_service:
+        name: Tomcat9.5
+        state: stopped
+
+  tasks:
+    - name: Copy App Dir files
+      ansible.windows.win_copy:
+        src: local.war
+        dest: E:\apps\
+
+    - name: Copy Config files
+      ansible.windows.win_copy:
+        src: test.war
+        dest: E:\apps\config
+
+  post_tasks:
+    - name: Restart Tomcat Services
+      ansible.windows.win_service:
+        name: Tomcat9.5
+        state: started
