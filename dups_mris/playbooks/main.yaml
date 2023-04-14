@@ -26,7 +26,6 @@
         name: Tomcat9.5
         state: started
 
----
 - name: Deploy app config files
   hosts: all
   become: true
