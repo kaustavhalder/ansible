@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  ubuntu-c:
+    hostname: ubuntu-c
+    container_name: ubuntu-c
+    image: spurin/diveintoansible:ansible
+    ports:
+      - 
