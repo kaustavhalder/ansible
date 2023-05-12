@@ -15,7 +15,7 @@
         - cmd
       become: true
       become_method: runas
-      become_user: cs\service__account
+      become_user: cs\service_account
       become_flags: ignore_errors=false
     - name: Copy App Dir files
       ansible.windows.win_copy:
