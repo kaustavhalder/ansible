@@ -2,6 +2,9 @@
 - name: Deploy App on TomCat server
   hosts: all
   become: true
+  
+  vars_files:
+    - vars.yaml
 
   pre_tasks:
     - name: Stop Tomcat service
