@@ -1,5 +1,5 @@
 ---
-download_dir: /tmp
+download_dir: E:\Download-Artifact\SourceCode_AppTemp
 tomcat_version: Tomcat9
 svc_acct_pass: !vault |
           $ANSIBLE_VAULT;1.1;AES256
