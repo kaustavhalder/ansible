@@ -9,3 +9,4 @@ Below is the overview
 - Use playbooks to manage them
 - VMs are mostly Linux
 - Revisit handlers and vars and roles
+- Encrypt vars always
