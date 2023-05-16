@@ -1,0 +1,19 @@
+---
+- name: Ensure Apache is installed
+  ansible.builtin.package:
+    name: "{{ apache_package }}"
+    state: present
+
+- name: Copy Test config file
+  ansible.builtin.copy:
+    src: files/test.conf
+    dest: "{{ apache_config_dir }}/test.conf"
+    owner: root
+    mode: '0700'
+  notify: restart Apache
+
+- name: Ensure Apache sis running and starts at boot
+  ansible.builtin.service:
+    name: "{{ apache_service }}"
+    state: started
+    enabled: true

@@ -5,6 +5,10 @@
   
   vars_files:
     - vars.yaml
+  
+  handlers:
+    - ansible.builtin.import_tasks:
+        - handlers/apache.yaml
 
   pre_tasks:
     - name: Stop Tomcat service
