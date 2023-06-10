@@ -1,5 +1,6 @@
 {
     "yaml.schemas": {
         "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": "file:///Users/kaustav/Codebase/DevOps/ansible/dups_mris/main.yaml"
-    }
+    },
+    "ansible.python.interpreterPath": "/opt/homebrew/bin/python3"
 }
