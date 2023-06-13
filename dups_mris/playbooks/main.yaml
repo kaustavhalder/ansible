@@ -2,7 +2,7 @@
 - name: Deploy App on TomCat server
   hosts: all
   become: true
-  become_method: runas
+  become_method: community.general.pbrun
   become_user: cs\service_account
   become_flags: ignore_errors=false
 
