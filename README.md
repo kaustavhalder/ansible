@@ -5,7 +5,7 @@
 This is just a standalone repo for learning Ansible using Jeff Geerlings live streams
 Below is the overview
 
-- Provision VMs using Vagrant and Virtual Box
+- Provision VMs using Vagrant and Virtual Box (UTM for Mac)
 - Use playbooks to manage them
 - VMs are mostly Linux
 - Revisit handlers and vars and roles
